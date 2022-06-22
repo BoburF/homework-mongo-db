@@ -1,30 +1,40 @@
 <div class="container">
     <div class="form">
-        <input type="number" placeholder="Search">
-    <button type="submit">Find</button>
+        <form action="/search">
+            <input type="text" class="inp" placeholder="Search" name="search" required>
+            <button type="submit">Find</button>
+        </form>
     </div>
     <table>
-    <tr>
-        <th>No</th>
-        <th>Name/Surname</th>
-        <th>Score</th>
-        <th>Group</th>
-        <th>Month</th>
-        <th>Edit</th>
-    </tr>
-    {{#if people.length}}
-    {{#each people}}
-    <tr>
-        <td class="top">1</td>
-        <td>{{name}} {{surname}}</td>
-        <td>{{score}}</td>
-        <td>{{group}}</td>
-        <td>{{month}}</td>
-        <td class="btn"><a href="/" class="edit">Edit</a></td>
-    </tr>
-    {{/each}}
-    {{else}}
-    <h2>Table is empty</h2>
-    {{/if}}
-</table>
+       
+            <thead>
+                <tr>
+                <th>No</th>
+                <th>Name/Surname</th>
+                <th>Score</th>
+                <th>Group</th>
+                <th>Month</th>  
+                <th>Edit</th>
+            </tr>
+            </thead>
+   
+        {{#if people.length}}
+        {{#each people}}
+      
+            <tr>
+                <td class="top">1</td>
+                <td>{{name}} {{surname}}</td>
+                <td>{{score}}</td>
+                <td>{{group}}</td>
+                <td>{{month}}</td>
+                <td class="btn"><a href="/people/{{id}}" class="edit">Edit</a></td>
+            </tr>
+
+        {{/each}}
+        {{else}}
+        <h2>Table is empty</h2>
+        {{/if}}
+    </table>
+
 </div>
+  <script src="/script/ayaks.js"></script>
