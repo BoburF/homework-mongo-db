@@ -70,7 +70,18 @@ table,td,th{
 }
 
 tr:nth-child(even){
-    background: #4a4849;
+    background: #2f2d2e;
+}
+
+.tr:nth-child(1),
+.tr:nth-child(2),
+.tr:nth-child(3){
+    background: green;
+}
+
+.tr:nth-child(4),
+.tr:nth-child(5){
+    background: rgb(178, 181, 13);
 }
 form{
     width: 800px;
