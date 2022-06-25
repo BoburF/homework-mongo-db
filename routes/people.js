@@ -38,7 +38,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/score/:id', async (req, res ) => {
     const peopleScore = {
-        score: (+req.body.oldScore + +req.body.score)
+        name: req.body.name,
+        surname: req.body.surname,
+        score: (+req.body.oldScore + +req.body.score),
+        number: req.body.number,
+        group: req.body.group,
+        month: req.body.month
     }
     const addScore = await Mongo.findByIdAndUpdate(req.params.id, peopleScore)
     res.redirect('/')
